@@ -32,11 +32,13 @@ int16_t Speed;       // Number of degrees to move each time a left/right button 
 uint32_t Previous;//handles NEC repeat codes
 
 void setup() {
-  myServo.attach(9);      // attaches the servo on pin 9 to the servo object
+  myServo1.attach(9);      // attaches the servo on pin 9 to the servo object
+  myServo2.attach(6);
   pos1 = 90;               // start at midpoint 90 degrees
   pos2 = 90;
   Speed = 3;              // servo moves 3 degrees each time left/right is pushed
-  myServo.write(pos);     // Set initial position
+  myServo1.write(pos1);     // Set initial position
+  myServo2.write(pos2);
   myReceiver.enableIRIn(); // Start the receiver
 }
 
